@@ -1,0 +1,12 @@
+*.o
+*.a
+*~
+#*#
+vgcore*
+unit_tests
+logs
+.vscode
+.clangd
+compile_commands.json
+*.gc*
+my_prog

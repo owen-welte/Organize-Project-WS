@@ -15,6 +15,9 @@
 Commit Message Standard :
 ***
 {type} [action] description
+
   =>        type: "FILE" "FOLDER" "MERGE" "SETUP"
+
   =>        action: Create / Add / Modif / Import / Remove / Delete
+
   => description: Describe what you done

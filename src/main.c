@@ -8,21 +8,35 @@
 #include "project.h"
 #include "lib.h"
 
+void print_usage(void)
+{
+    my_putstr(
+            "Detect the type of the passed variable"
+            "USAGE\n"
+            "    ./my_prog var\n"
+            "\nDESCRIPTION\n"
+            "    var: The var you want to test\n"
+            "         (You can have up to 10 variables)\n"
+            );
+}
+
 void print_error(char const *error_message)
 {
     write(2, error_message, my_strlen(error_message));
 }
 
-int check_error(int ac)
+int check_error(int ac, const char *arg)
 {
-    if (ac != 3) {
-        if (ac > 3) {
-            print_error(TOO_MANY_ARGS);
-            return 1;
-        } else if (ac < 3) {
-            print_error(TOO_FEW_ARGS);
-            return 1;
-        }
+    if (ac > 10) {
+        print_error(TOO_MANY_ARGS);
+        return 1;
+    } else if (ac < 2) {
+        print_error(TOO_FEW_ARGS);
+        return 1;
+    }
+    if (arg[0] == '-' && arg[1] == 'h') {
+        print_usage();
+        return 2;
     }
     return 0;
 }
@@ -79,9 +93,13 @@ int detect_arg_type(const char *arg)
 
 int main(int ac, char const *av[])
 {
-    if (check_error(ac) == 1)
+    int error_ret = check_error(ac, av[1]);
+
+    if (error_ret == 1)
         return 84;
-    for (int i = 0; i < ac; i++) {
+    else if (error_ret == 2)
+        return 0;
+    for (int i = 1; i < ac; i++) {
         my_putstr(av[i]);
         detect_arg_type(av[i]);
         my_putchar('\n');

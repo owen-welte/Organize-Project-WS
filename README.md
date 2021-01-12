@@ -1,4 +1,3 @@
-# B-PSU-101-BDX-1-1-navy-owen.welte
 ```                                
  /$$$$$$$                                            /$$    
 | $$__  $$                                          | $$    
@@ -15,13 +14,7 @@
 
 Commit Message Standard :
 ***
-× {type} [file_name]  
-  → type : "FILE" "FOLDER" "MAKEFILE" ...  
-  → file_name : without .X ; "main" "my_..."  
-  
-DESCRIPTION
----
-× - {action} function/part --> description  
-  → action : Create / Modif / Import / Remove / Delete  
-  → function/part : name of the `action` function, or the part  
-  → description : description of the `action` made  
+{type} [action] description
+  =>        type: "FILE" "FOLDER" "MERGE" "SETUP"
+  =>        action: Create / Add / Modif / Import / Remove / Delete
+  => description: Describe what you done

@@ -10,14 +10,12 @@
 
 void print_usage(void)
 {
-    my_putstr(
-            "Detect the type of the passed variable"
-            "USAGE\n"
-            "    ./my_prog var\n"
-            "\nDESCRIPTION\n"
-            "    var: The var you want to test\n"
-            "         (You can have up to 10 variables)\n"
-            );
+    my_putstr("Detect the type of the passed variable"
+    "USAGE\n"
+    "    ./my_prog var\n"
+    "\nDESCRIPTION\n"
+    "    var: The var you want to test\n"
+    "         (You can have up to 10 variables)\n");
 }
 
 void print_error(char const *error_message)
@@ -95,10 +93,11 @@ int main(int ac, char const *av[])
 {
     int error_ret = check_error(ac, av[1]);
 
-    if (error_ret == 1)
+    if (error_ret == 1) {
         return 84;
-    else if (error_ret == 2)
+    } else if (error_ret == 2) {
         return 0;
+    }
     for (int i = 1; i < ac; i++) {
         my_putstr(av[i]);
         detect_arg_type(av[i]);

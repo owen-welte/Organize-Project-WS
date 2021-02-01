@@ -8,7 +8,8 @@
 CC			=	gcc
 
 SRC			=	file.c
-SRC_MAIN 	= 	main.c	\
+
+SRC_MAIN 	= 	main.c
 
 DIR_SRC 	= 	src/
 

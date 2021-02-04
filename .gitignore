@@ -6,6 +6,7 @@ vgcore*
 unit_tests
 logs
 .vscode
+.cache
 .clangd
 compile_commands.json
 *.gc*
